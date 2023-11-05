@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useDataFetching from "sharedResources/hooks/useDataFetching";
 import Button from "sharedResources/components/Button/Button";
 import List from "sharedResources/components/List/List";
+import { AppContainer, ListContainer } from "./Layout_rm.styled";
 
 interface LayoutProps {
   title: string;
@@ -13,20 +14,27 @@ export const LayoutRm: React.FC<LayoutProps> = ({
   title: string;
 }) => {
   const [showList, setShowList] = useState<boolean>(false);
-  const { data, loading, error } = useDataFetching(
+  const { data, loading } = useDataFetching(
     "https://rickandmortyapi.com/api/character"
   );
-  console.log(data);
 
   const handleList = () => {
     setShowList(!showList);
   };
 
   return (
-    <div>
+    <AppContainer>
       <Button onClick={handleList} title={title} />
-
-      {showList && <List list={data.results} />}
-    </div>
+      {showList && (
+        <ListContainer>
+          <List
+            list={data.results}
+            loading={loading}
+            showList={showList}
+            setShowList={setShowList}
+          />
+        </ListContainer>
+      )}
+    </AppContainer>
   );
 };

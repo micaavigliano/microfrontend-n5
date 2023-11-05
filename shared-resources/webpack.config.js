@@ -42,6 +42,7 @@ module.exports = {
         "./components/Button/Button": "./components/Button/Button.tsx",
         "./components/List/List": "./components/List/List.tsx",
         "./components/Header/Header": "./components/Header/Header.tsx",
+        "./components/Footer/Footer": "./components/Footer/Footer.tsx",
       },
       shared: {
         react: { singleton: true },

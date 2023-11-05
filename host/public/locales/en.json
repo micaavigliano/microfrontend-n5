@@ -1,5 +1,6 @@
 {
   "hp-btn": "Harry Potter's characters",
   "rm-btn": "Rick n Morty's characterts",
-  "change-es": "Change language to spanish"
+  "change-es": "Change language to spanish",
+  "language-selected": "language selected"
 }

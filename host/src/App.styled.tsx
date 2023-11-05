@@ -2,9 +2,16 @@ import styled from "styled-components";
 import Button from "sharedResources/components/Button/Button";
 
 export const Main = styled.main`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px 20px;
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Section = styled.section`
+  width: 40%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  margin-left: 22%;
+  padding-right: 20%;
 `;
 
 export const ButtonsContainer = styled.div`
