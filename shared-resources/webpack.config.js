@@ -41,8 +41,11 @@ module.exports = {
         "./hooks/useDataFetching": "./hooks/useDataFetching.tsx",
         "./components/Button/Button": "./components/Button/Button.tsx",
         "./components/List/List": "./components/List/List.tsx",
+        "./components/LazyLoadedImage/LazyLoadedImage":
+          "./components/LazyLoadedImage/LazyLoadedImage.tsx",
         "./components/Header/Header": "./components/Header/Header.tsx",
         "./components/Footer/Footer": "./components/Footer/Footer.tsx",
+        "./components/Dropdown/Dropdown": "./components/Dropdown/Dropdown.tsx",
       },
       shared: {
         react: { singleton: true },

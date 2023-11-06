@@ -23,8 +23,6 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose }) => {
       const interactiveElements =
         modalRef.current?.querySelectorAll("input, a, button");
 
-      console.log(interactiveElements);
-
       if (interactiveElements) {
         const firstInteractiveElement = interactiveElements[0];
         if (firstInteractiveElement instanceof HTMLElement) {

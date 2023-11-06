@@ -16,6 +16,6 @@
     "noEmit": false,
     "jsx": "react-jsx"
   },
-  "include": ["***/**/*"],
+  "include": ["****/***/**/*"],
   "exclude": ["./plugins/**/*", "./typings/**/*", "./dist/**/*"]
 }

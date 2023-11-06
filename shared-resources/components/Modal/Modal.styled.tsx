@@ -10,6 +10,7 @@ export const Dialog = styled.dialog`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
+  padding: 0;
 `;
 
 export const ModalContainer = styled.div`
@@ -26,10 +27,11 @@ export const ModalContainer = styled.div`
   flex-direction: column;
   overflow: auto;
   position: relative;
-`;
 
-//rounded-lg
-//shadow-md
+  @media (max-width: 700px) {
+    width: 80%;
+  }
+`;
 
 export const DialogHeader = styled.div`
   position: sticky;

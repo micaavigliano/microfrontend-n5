@@ -10,9 +10,9 @@
     "start:shared-resources": "cd shared-resources && npm run start",
     "start": "npm-run-all --parallel start:shared-resources start:hp-app start:rick-morty-app start:host",
     "install-pack:host": "cd host && npm install",
-    "instal-pack:hp-app": "cd hp-app && install",
-    "install-pack:rick-morty-app": "cd rick-morty-app && install",
-    "install-pack:shared-resources": "cd shared-resources && install",
+    "instal-pack:hp-app": "cd hp-app && npm install",
+    "install-pack:rick-morty-app": "cd rick-morty-app && npm install",
+    "install-pack:shared-resources": "cd shared-resources && npm install",
     "install-all": "npm-run-all --parallel install-pack:host instal-pack:hp-app install-pack:rick-morty-app install-pack:shared-resources"
   },
   "author": "Mica Avigliano",
