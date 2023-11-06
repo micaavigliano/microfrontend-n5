@@ -2,5 +2,10 @@
   "hp-btn": "Harry Potter personajes",
   "rm-btn": "Personajes de Rick and Morty",
   "change-en": "Cambiar idioma a inglés",
-  "language-selected": "idioma seleccionado"
+  "language-selected": "idioma seleccionado",
+  "header": "Conoce a tus personajes favoritos",
+  "footer": "Hecho con ♡ por Mica Avigliano",
+  "language": "Selecciona el idioma",
+  "english": "Inglés 🇬🇧",
+  "spanish": "Español 🇦🇷"
 }

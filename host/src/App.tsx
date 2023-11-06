@@ -1,4 +1,10 @@
-import React, { Fragment, Suspense, KeyboardEvent } from "react";
+import React, {
+  Fragment,
+  Suspense,
+  KeyboardEvent,
+  useEffect,
+  useState,
+} from "react";
 import ReactDOM from "react-dom";
 
 import { I18nextProvider } from "react-i18next";
@@ -18,6 +24,11 @@ import "./index.css";
 const App = () => {
   const { i18n, t } = useTranslation();
 
+  const options = [
+    { code: "en", display: t("english") },
+    { code: "es", display: t("spanish") },
+  ];
+
   const changeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
   };
@@ -28,39 +39,39 @@ const App = () => {
     }
   };
 
-  const options = ["english 🇬🇧", "spanish 🇦🇷"];
+  useEffect(() => {
+    const dropdownToFocus = document.querySelector(`button[id="dropdownBtn"]`);
+
+    if (dropdownToFocus instanceof HTMLElement) {
+      dropdownToFocus.focus();
+    }
+  }, []);
 
   return (
     <I18nextProvider i18n={i18n}>
       <Suspense fallback="loading">
         <Header>
-          <Dropdown label="Select a language">
+          <Dropdown label={t("language")}>
             {options.map((opt, index) => (
               <Fragment key={index}>
                 <div
                   tabIndex={0}
-                  onClick={() =>
-                    changeLanguage(opt === "english 🇬🇧" ? "en" : "es")
-                  }
-                  onKeyDown={(e: KeyboardEvent<HTMLDivElement>) => {
-                    if (e.key === "Enter") {
-                      changeLanguage(opt === "english 🇬🇧" ? "en" : "es");
-                    }
-                  }}
+                  onClick={() => changeLanguage(opt.code)}
+                  onKeyDown={(e) => onKeyDown(e, opt.code)}
                   aria-label={
-                    opt === "english 🇬🇧"
-                      ? `español ${t("language-selected")}`
-                      : t("change-en")
+                    opt.code === "en"
+                      ? t("change-en")
+                      : t("language-selected", { language: t("spanish") })
                   }
                 >
-                  {opt}
+                  {opt.code === "en" ? "English 🇬🇧" : "Español 🇦🇷"}
                 </div>
               </Fragment>
             ))}
           </Dropdown>
         </Header>
         <Main>
-          <h1>Conoce a tus personajes favoritos</h1>
+          <h1>{t("header")}</h1>
           <SectionContainer>
             <Section>
               <Layout title={t("hp-btn")} />
@@ -71,7 +82,7 @@ const App = () => {
           </SectionContainer>
         </Main>
         <Footer>
-          <p>Mica footer</p>
+          <p>{t("footer")}</p>
         </Footer>
       </Suspense>
     </I18nextProvider>

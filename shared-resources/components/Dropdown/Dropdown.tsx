@@ -109,6 +109,7 @@ const Dropdown: React.FC<DropdownProps> = ({ children, label }) => {
                       value = child.props.children.props.children;
                     }
                     selectedOptRef.current = String(value);
+
                     setIsOpen(false);
                     setActiveIndex(-1);
                   }}

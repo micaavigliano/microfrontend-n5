@@ -11,10 +11,6 @@ export const GeneralInfo = styled.div`
   overflow: hidden;
   transition: width 0.3s, height 0.3s;
 
-  span > p {
-    margin: 0;
-  }
-
   @media (max-width: 700px) {
     width: 100%;
   }

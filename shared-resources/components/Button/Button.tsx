@@ -2,14 +2,16 @@ import React, { ReactElement } from "react";
 import { ButtonContainer } from "./Button.styled";
 
 export interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  className: string;
-  title: string;
+  className?: string;
+  title?: string;
+  ariaLabel?: string;
 }
 
 const Button = (props: Props) => {
-  const { onClick, className, title, ...rest } = props;
+  const { onClick, ariaLabel, className, title, ...rest } = props;
   return (
     <ButtonContainer
+      aria-label={ariaLabel}
       className={className}
       onClick={onClick}
       title={title}

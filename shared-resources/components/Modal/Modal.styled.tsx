@@ -35,8 +35,10 @@ export const ModalContainer = styled.div`
 
 export const DialogHeader = styled.div`
   position: sticky;
+  display: flex;
+  justify-content: flex-end;
   top: 0;
-  height: 5%;
+  height: 6%;
   width: 100%;
   background-color: grey;
 `;

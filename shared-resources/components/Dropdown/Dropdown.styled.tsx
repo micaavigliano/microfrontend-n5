@@ -10,6 +10,11 @@ export const DropdownContainer = styled.div`
     border-radius: 8px;
     width: 128px;
     height: 42px;
+
+    &:focus {
+      background-color: #888;
+      box-shadow: 0 0 5px #999;
+    }
   }
 
   & ul.dropdown-list {

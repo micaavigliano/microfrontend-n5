@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import useDataFetching from "sharedResources/hooks/useDataFetching";
 import Button from "sharedResources/components/Button/Button";
 import List from "sharedResources/components/List/List";
@@ -25,9 +25,25 @@ export const LayoutRm: React.FC<LayoutProps> = ({
     setShowList(!showList);
   };
 
+  useEffect(() => {
+    if (!showList) {
+      const buttonToFocus = document.querySelector(
+        `button[data-item-id="rick-n-morty-id"]`
+      );
+
+      if (buttonToFocus instanceof HTMLElement) {
+        buttonToFocus.focus();
+      }
+    }
+  }, [showList]);
+
   return (
     <AppContainer>
-      <Button onClick={handleList} title={title} />
+      <Button
+        onClick={handleList}
+        title={title}
+        data-item-id="rick-n-morty-id"
+      />
       {showList && (
         <List showList={showList} setShowList={setShowList}>
           {data.results.map((list: GenericObject) => (

@@ -40,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({ children, isOpen, onClose }) => {
     <Dialog ref={modalRef as unknown as React.RefObject<HTMLDialogElement>}>
       <ModalContainer onKeyUp={onKeyDown}>
         <DialogHeader>
-          <button onClick={onClose}>close x</button>
+          <button onClick={onClose}>╳</button>
         </DialogHeader>
         {children}
       </ModalContainer>

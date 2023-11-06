@@ -18,5 +18,6 @@ export const ButtonContainer = styled.button<Props>`
 
   &:focus {
     background-color: #888;
+    box-shadow: 0 0 5px #999;
   }
 `;
