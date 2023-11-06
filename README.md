@@ -6,6 +6,7 @@
 - run `npm install`
 - Once the installation finished, run `npm run install-all` in order to install the `node_modules` for all the projects.
 - Then, run `npm run start` so all the projects can start. A little note about this: the only project that will pop up will be the `host` project. If you want to test isolated the other projects you can use the following URLs: [Harry Potter](http://localhost:8081/) and [Rick n Morty](http://localhost:8083/)
+- Additionally, if you want to test the Storybook isolated components, please go to the folder `shared-resources` and run `npm run storybook`. There you can check them out.
 - Done! Everything is set up to start using :)
 
 ## Stack
