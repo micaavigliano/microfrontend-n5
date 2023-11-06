@@ -22,4 +22,5 @@ I created four different projetcs:
 - shared-resources: here we are going to find all those resources that are going to be reusable throughout our applications. Among them we can find: Button, Dropdown, Modal and List. In addition to that, we are going to find reusable hooks
 - all the components are fully accessible. Can be interacted both with mouse and keyboard. Also contains focus management so we can be in fully control of our actions
 
-  
+Thank you!
+Mica ☺️
