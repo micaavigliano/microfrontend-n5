@@ -12,9 +12,14 @@ import { DropdownContainer } from "./Dropdown.styled";
 interface DropdownProps {
   children: ReactNode;
   label: string;
+  changeLanguage?: (lang: string) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ children, label }) => {
+const Dropdown: React.FC<DropdownProps> = ({
+  children,
+  label,
+  changeLanguage,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const selectedOptRef = useRef<string | null>(null);
@@ -57,6 +62,8 @@ const Dropdown: React.FC<DropdownProps> = ({ children, label }) => {
       setIsOpen(false);
     }
   };
+
+  const handleOnKeyDown = (ev: KeyboardEvent<HTMLLIElement>) => {};
 
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
@@ -101,20 +108,25 @@ const Dropdown: React.FC<DropdownProps> = ({ children, label }) => {
                   tabIndex={0}
                   role="option"
                   onClick={() => {
-                    let value;
-                    if (
-                      typeof child.props.children === "object" &&
-                      child.props.children !== null
-                    ) {
-                      value = child.props.children.props.children;
-                    }
-                    selectedOptRef.current = String(value);
-
+                    let value = "";
+                    value = child.props.children.props.children;
+                    selectedOptRef.current = value;
                     setIsOpen(false);
                     setActiveIndex(-1);
+                    changeLanguage!(child.props.children.props.id);
+                  }}
+                  onKeyDown={(e: KeyboardEvent<HTMLLIElement>) => {
+                    if (e.key === "Enter") {
+                      let value = "";
+                      value = child.props.children.props.children;
+                      selectedOptRef.current = value;
+                      setIsOpen(false);
+                      setActiveIndex(-1);
+                      changeLanguage!(child.props.children.props.id);
+                    }
                   }}
                 >
-                  {child}
+                  {child.props.children.props.children}
                 </li>
               );
             }

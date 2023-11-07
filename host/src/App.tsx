@@ -30,13 +30,8 @@ const App = () => {
   ];
 
   const changeLanguage = (lang: string) => {
+    console.log("se dispara?");
     i18n.changeLanguage(lang);
-  };
-
-  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>, lang: string) => {
-    if (event.key === "Enter") {
-      changeLanguage(lang);
-    }
   };
 
   useEffect(() => {
@@ -51,20 +46,18 @@ const App = () => {
     <I18nextProvider i18n={i18n}>
       <Suspense fallback="loading">
         <Header>
-          <Dropdown label={t("language")}>
+          <Dropdown label={t("language")} changeLanguage={changeLanguage}>
             {options.map((opt, index) => (
               <Fragment key={index}>
                 <div
-                  tabIndex={0}
-                  onClick={() => changeLanguage(opt.code)}
-                  onKeyDown={(e) => onKeyDown(e, opt.code)}
+                  id={opt.code}
                   aria-label={
                     opt.code === "en"
                       ? t("change-en")
                       : t("language-selected", { language: t("spanish") })
                   }
                 >
-                  {opt.code === "en" ? "English 🇬🇧" : "Español 🇦🇷"}
+                  {opt.code === "en" ? t("english") : t("spanish")}
                 </div>
               </Fragment>
             ))}
