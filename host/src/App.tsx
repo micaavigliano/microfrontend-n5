@@ -30,7 +30,6 @@ const App = () => {
   ];
 
   const changeLanguage = (lang: string) => {
-    console.log("se dispara?");
     i18n.changeLanguage(lang);
   };
 
