@@ -1,20 +1,14 @@
-import React, {
-  Fragment,
-  Suspense,
-  KeyboardEvent,
-  useEffect,
-  useState,
-} from "react";
+import React, { Fragment, Suspense, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import { I18nextProvider } from "react-i18next";
-import i18n from "./i18n";
+
 import { useTranslation } from "react-i18next";
 
 import { Layout } from "hp_app/Layout";
 import { LayoutRm } from "rick_morty_app/LayoutRm";
 import Header from "sharedResources/components/Header/Header";
-import Button from "sharedResources/components/Button/Button";
+
 import Footer from "sharedResources/components/Footer/Footer";
 import Dropdown from "sharedResources/components/Dropdown/Dropdown";
 import { Main, Section, SectionContainer } from "./App.styled";
