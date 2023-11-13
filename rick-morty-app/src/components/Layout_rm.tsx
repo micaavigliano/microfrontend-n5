@@ -4,6 +4,7 @@ import Button from "sharedResources/components/Button/Button";
 import List from "sharedResources/components/List/List";
 import LazyLoadedImage from "sharedResources/components/LazyLoadedImage/LazyLoadedImage";
 import { AppContainer, GeneralInfo, MoreInfo } from "./Layout_rm.styled";
+import { useTranslation } from "react-i18next";
 
 export interface GenericObject {
   [key: string]: any;
@@ -18,6 +19,7 @@ export const LayoutRm: React.FC<LayoutProps> = ({
 }: {
   title: string;
 }) => {
+  const { t } = useTranslation();
   const [showList, setShowList] = useState<boolean>(false);
   const { data } = useDataFetching("https://rickandmortyapi.com/api/character");
 
@@ -66,17 +68,17 @@ export const LayoutRm: React.FC<LayoutProps> = ({
 
                 <span>
                   <p>
-                    <strong>Species:</strong> {list.species}
+                    <strong>{t("specie")}:</strong> {list.species}
                   </p>
                 </span>
                 <span>
                   <p>
-                    <strong>Gender:</strong> {list.gender}
+                    <strong>{t("gender")}:</strong> {list.gender}
                   </p>
                 </span>
                 <span>
                   <p>
-                    <strong>Location:</strong> {list.location.name}
+                    <strong>{t("location")}:</strong> {list.location.name}
                   </p>
                 </span>
               </MoreInfo>{" "}

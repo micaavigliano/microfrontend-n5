@@ -7,5 +7,8 @@
   "footer": "Made with ♡ by Mica Avigliano",
   "language": "Select language",
   "english": "English 🇬🇧",
-  "spanish": "Spanish 🇦🇷"
+  "spanish": "Spanish 🇦🇷",
+  "gender": "Gender",
+  "specie": "Specie",
+  "location": "Location"
 }

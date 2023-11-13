@@ -4,6 +4,7 @@ import Button from "sharedResources/components/Button/Button";
 import List from "sharedResources/components/List/List";
 import LazyLoadedImage from "sharedResources/components/LazyLoadedImage/LazyLoadedImage";
 import { AppContainer, GeneralInfo, MoreInfo } from "./Layout.styled";
+import { useTranslation } from "react-i18next";
 
 export interface GenericObject {
   [key: string]: any;
@@ -14,6 +15,7 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ title }: { title: string }) => {
+  const { t } = useTranslation();
   const [showList, setShowList] = useState<boolean>(false);
   const { data } = useDataFetching(
     "https://hp-api.onrender.com/api/characters"
@@ -68,17 +70,17 @@ export const Layout: React.FC<LayoutProps> = ({ title }: { title: string }) => {
 
                 <span>
                   <p>
-                    <strong>Species:</strong> {list.species}
+                    <strong>{t("specie")}:</strong> {list.species}
                   </p>
                 </span>
                 <span>
                   <p>
-                    <strong>Gender:</strong> {list.gender}
+                    <strong>{t("gender")}:</strong> {list.gender}
                   </p>
                 </span>
                 <span>
                   <p>
-                    <strong>Location:</strong>{" "}
+                    <strong>{t("location")}:</strong>{" "}
                     {list.house !== "" ? list.house : "-"}
                   </p>
                 </span>

@@ -46,6 +46,8 @@ module.exports = {
         "./components/Header/Header": "./components/Header/Header.tsx",
         "./components/Footer/Footer": "./components/Footer/Footer.tsx",
         "./components/Dropdown/Dropdown": "./components/Dropdown/Dropdown.tsx",
+        "./translations/en": "./translations/en.json",
+        "./translations/es": "./translations/es.json",
       },
       shared: {
         react: { singleton: true },
